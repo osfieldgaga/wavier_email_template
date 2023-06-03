@@ -1,6 +1,6 @@
 <extends src="src/layouts/main.html">
   <block name="template">
-    <table class="w-full text-black bg-gray-100 font-outfit h-full ">
+    <table class="w-full text-black bg-gray-100 font-montserrat h-full ">
       <tr>
         <td align="center">
           <table class="sm:w-full w-150 bg-white drop-shadow pb-8 rounded-b-2xl mb-4">
@@ -14,7 +14,7 @@
                         src="https://firebasestorage.googleapis.com/v0/b/barbapp-d4159.appspot.com/o/appImages%2FWavierLogoText.png?alt=media&token=36635640-7950-4483-802b-ba0b77be2a9c" />
                     </a>
                   </div>
-                  <div class="font-bold text-xl pb-4 px-16">Hello ${bookingCompletedBY}, you cancelled an appointment.</div>
+                  <div class="font-bold text-xl pb-4">Hello ${bookingCompletedBY}, you're booked!</div>
                   <div class="text-xs">Here are all the details about it.</div>
                 </div>
               </td>
@@ -22,8 +22,8 @@
 
             <tr>
               <td align="center">
-                <p class="text-montserrat text-2xl font-light">
-                  Appointment cancelled
+                <p class="text-montserrat text-2xl font-thin">
+                  Booking summary
                 </p>
               </td>
             </tr>
@@ -34,14 +34,13 @@
                   Date
                 </p>
                 <p>${chosenDay} at ${chosenTime}</p>
-                
-                <div class="bg-red-100 rounded-xl mb-2 py-[1px] ">
-
-                  <div class="px-4">
-                    <p className="text-sm font-normal leading-6 italic">
-                     Don't forget to remove the event from your calendar!
-                    </p>
-                  </div>
+                <div class="flex">
+                  <a style="text-decoration: none;" class="pr-4"
+                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Appointment with ${barberBooked}&details=Appointment with ${barberBooked} for a ${selectedServiceName}&dates=${calendar_start}/${calendar_end}">
+                    <div class="rounded px-4 py-1 bg-[#4287f5]">
+                      <p class="font-bold text-white">Add to Google Calendar</p>
+                    </div>
+                  </a>
 
                 </div>
               </td>
@@ -98,11 +97,14 @@
 
             <tr>
               <td class="px-8 md:px-16 ">
-                <div class="w-full bg-red-100 rounded-xl mb-2 py-1 mt-8">
+                <div class="w-full bg-gray-100 rounded-xl mb-2 py-4 mt-8">
 
                   <div class="px-4">
+                    <span className="inline-block mb-2 text-xs font-normal">
+                      Additional notes:
+                    </span>
                     <p className="text-sm font-normal leading-6">
-                      The appointment was succesfully cancelled and no fee was charged for it. Please note that future releases of Wavier will introduce a cancellation fee.
+                      ${additionalInfo}
                     </p>
                   </div>
 

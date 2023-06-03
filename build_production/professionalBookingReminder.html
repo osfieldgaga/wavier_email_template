@@ -65,22 +65,37 @@
                       <img align="center" src="https://firebasestorage.googleapis.com/v0/b/barbapp-d4159.appspot.com/o/appImages%2FWavierLogoText.png?alt=media&token=36635640-7950-4483-802b-ba0b77be2a9c" style="width: 128px; padding-bottom: 16px" alt="">
                     </a>
                   </div>
-                  <div style="padding-left: 64px; padding-right: 64px; padding-bottom: 16px; font-size: 20px; font-weight: 700">Hello Wavier heroes 🦸, a user needs your help!</div>
-                  <div style="font-size: 12px">Here are all the details about it.</div>
+                  <div style="padding-left: 64px; padding-right: 64px; padding-bottom: 16px; font-size: 20px; font-weight: 700">Hello ${barberBooked}, you have a booking tomorrow with one of your clients!</div>
+                  <div style="font-size: 12px">This is just a quick reminder, find the details of the booking below.</div>
                 </div>
               </td>
             </tr>
             <tr>
               <td align="center">
                 <p style="font-size: 24px; font-weight: 300">
-                  User support
+                  Booking reminder
                 </p>
               </td>
             </tr>
             <tr>
               <td style="padding-left: 32px; padding-right: 32px">
                 <p style="font-weight: 700">
-                  User's details
+                  Date
+                </p>
+                <p>${chosenDay} at ${chosenTime} (Tomorrow)</p>
+                <p style="padding-top: 16px; font-size: 14px; color: #6b7280">If you haven't already, add it to your calendar</p>
+                <div style="display: flex">
+                  <a style="text-decoration: none; padding-right: 16px" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Appointment with ${barberBooked}&details=Appointment with ${barberBooked} for a ${selectedServiceName}&dates=${calendar_start}/${calendar_end}">
+                    <div style="border-radius: 4px; background-color: #4287f5; padding-top: 4px; padding-bottom: 4px; padding-left: 16px; padding-right: 16px">                      <p style="font-weight: 700; color: #fff">Add to Google Calendar</p>
+                    </div>
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-left: 32px; padding-right: 32px">
+                <p style="font-weight: 700">
+                  Your client
                 </p>
                 <div style="display: flex; width: 100%; align-items: center; justify-content: center">
                   <div style="display: flex; align-items: center; justify-content: space-between">
@@ -88,15 +103,10 @@
                       <div style="background-image: url('${profilePic}'); height: 64px; width: 64px; border-radius: 9999px; background-color: #60a5fa; background-size: cover">
                       </div>
                       <div style="padding-left: 16px">
-                        <div style="padding-bottom: 8px">${name}</div>
+                        <div style="padding-bottom: 8px">${bookingCompletedBY}</div>
                         <a href="tel:${phone}">
                           <div>${phone}</div>
                         </a>
-                        <div style="padding-top: 8px">
-                          <a href="mailto:${email}">
-                            <div>${email}</div>
-                          </a>
-                        </div>
                       </div>
                     </div>
                     <div style="display: flex; align-items: center; padding-left: 16px"> </div>
@@ -107,11 +117,11 @@
             <tr>
               <td style="padding-left: 32px; padding-right: 32px">
                 <p style="font-weight: 700">
-                  User's Firebase token
+                  Service
                 </p>
                 <div style="display: flex; width: 100%; align-items: center; justify-content: center">
                   <div style="display: flex; width: 100%; align-items: center; justify-content: space-between">
-                    ${token} </div>                </div>
+                    ${selectedServiceName} </div>                </div>
               </td>
             </tr>
             <tr>
@@ -119,10 +129,10 @@
                 <div style="margin-bottom: 8px; margin-top: 32px; width: 100%; border-radius: 12px; background-color: #f3f4f6; padding-top: 16px; padding-bottom: 16px">
                   <div style="padding-left: 16px; padding-right: 16px">
                     <span classname="inline-block mb-2 text-xs font-normal">
-                      Message:
+                      Additional notes:
                     </span>
                     <p classname="text-sm font-normal leading-6">
-                      ${message}
+                      ${additionalInfo}
                     </p>
                   </div>
                 </div>
@@ -154,7 +164,7 @@
             </tr>
           </table>
           <div style="padding-top: 4px; padding-bottom: 4px; font-size: 12px">
-            <p>This email was sent to you because you're a registered Wavier super hero.</p>
+            <p>This email was sent to you because you're a registered Wavier user.</p>
             <p>Powered by Wavier. Copyright 2023</p>
           </div>
         </td>

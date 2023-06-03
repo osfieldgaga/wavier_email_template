@@ -104,7 +104,8 @@ module.exports = {
         serif: ['ui-serif', 'Georgia', 'Cambria', '"Times New Roman"', 'Times', 'serif'],
         mono: ['ui-monospace', 'Menlo', 'Consolas', 'monospace'],
         montserrat: ['Montserrat', 'sans-serif'],
-        pacifico: ['Pacifico', 'cursive']
+        pacifico: ['Pacifico', 'cursive'],
+        outfit: ["Outfit", "sans-serif"]
       },
       fontSize: {
         0: '0',
