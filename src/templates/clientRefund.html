@@ -1,0 +1,240 @@
+<extends src="src/layouts/main.html">
+  <block name="template">
+    <table class="w-full text-black bg-gray-100 font-montserrat h-full ">
+      <tr>
+        <td align="center">
+          <table class="sm:w-full w-150 bg-white drop-shadow pb-8 rounded-b-2xl mb-4">
+            <tr>
+              <td align="center" class=" text-center ">
+                <div class="bg-blue-100 w-full py-20 bg-cover text-white rounded-t-2xl"
+                  style="background-image: url('https://firebasestorage.googleapis.com/v0/b/barbapp-d4159.appspot.com/o/appImages%2Fheader_bg.png?alt=media&token=5a49db42-490a-4696-965b-7eb221878004');">
+                  <div class="w-full pb-4" style="margin: 0 auto; text-align: center;">
+                    <a href="https://wavier.io/">
+                      <img align="center" class="w-32 pb-4"
+                        src="https://firebasestorage.googleapis.com/v0/b/barbapp-d4159.appspot.com/o/appImages%2FWavierLogoText.png?alt=media&token=36635640-7950-4483-802b-ba0b77be2a9c" />
+                    </a>
+                  </div>
+                  <div class="font-bold text-xl pb-4 px-4">Hello Wavier heroes 🦸! An appointment was cancelled, we need
+                    your help with refunding the client</div>
+                  <div class="text-xs">Here are all the details about it.</div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td align="center">
+                <p class="text-montserrat text-2xl font-thin">
+                  Client refund
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="px-8 md:px-16">
+                <p class="font-bold text-md">
+                  User's details
+                </p>
+                <div class="w-full flex items-center justify-center">
+                  <div class="flex items-center justify-between ">
+                    <div class="flex items-center">
+                      <div class="w-16 h-16 bg-blue-400 rounded-full bg-cover"
+                        style="background-image: url('${profilePic}');">
+                      </div>
+                      <div class="pl-4">
+                        <div class="pb-2">${name}</div>
+                        <a href="tel:${phone}">
+                          <div>${phone}</div>
+                        </a>
+                        <div class="pt-2">
+                          <a href="mailto:${email}">
+                            <div>${email}</div>
+                          </a>
+                        </div>
+
+                      </div>
+                    </div>
+                    <div class="flex items-center md:pl-8 pl-4">
+                      <!-- <div class="w-10 h-10 bg-blue-100 rounded-full ml-16"
+                      ></div> -->
+
+
+                      <!-- <div class="w-10 h-10 bg-white rounded-full mx-2"></div> -->
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="px-8 md:px-16">
+                <p class="font-bold text-md">
+                  User's Firebase token
+                </p>
+                <div class="w-full flex items-center justify-center">
+                  <div class="flex justify-between items-center w-full">
+                    ${token}
+                    <!-- <span class="flex ">
+                      <div class="">GHS </div>
+                      <div class="font-medium">@{{ serviceName }}</div>
+                    </span> -->
+                  </div>
+
+
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="px-8 md:px-16">
+                <p class="font-bold text-md">
+                  Shop's cancellation policy
+                </p>
+                <div class="w-full flex items-center justify-center mt-2">
+                  <div class="flex justify-between items-center w-full">
+                    Shop's cancellation fee: ${cancellationFee}
+                  </div>
+                </div>
+                <div class="w-full flex items-center justify-center mt-2">
+                  <div class="flex justify-between items-center w-full">
+                    Shop's cancellation window: ${cancellationWindow}
+                  </div>
+                </div>
+                
+              </td>
+            </tr>
+
+            <tr>
+              <td class="px-8 md:px-16">
+                <p class="font-bold text-md">
+                  Cancelled appointment details
+                </p>
+                <div class="w-full flex items-center justify-center">
+                  <div class="flex justify-between items-center w-full">
+                    Date of cancelled appointment: ${appointmentDate}
+                  </div>
+                </div>
+                <div class="w-full flex items-center justify-center mt-2">
+                  <div class="flex justify-between items-center w-full">
+                    Date of cancellation: ${cancelDate}
+                  </div>
+                </div>
+                <div class="w-full flex items-center justify-center mt-2">
+                  <div class="flex justify-between items-center w-full">
+                    Difference in hours: ${cancelHoursDiff}
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="px-8 md:px-16">
+                <p class="font-bold text-md">
+                  Transaction details
+                </p>
+                <div class="w-full flex items-center justify-center">
+                  <div class="flex justify-between items-center w-full">
+                    Transaction ID (Paystack): ${transactionID}
+                  </div>
+                </div>
+                <div class="w-full flex items-center justify-center mt-2">
+                  <div class="flex justify-between items-center w-full">
+                    Total price of the appointment: ${amount}
+                  </div>
+                </div>
+                <div class="w-full flex items-center justify-center mt-2">
+                  <div class="flex justify-between items-center w-full">
+                    Type of refund: ${refundType}
+                  </div>
+                </div>
+                <div class="w-full flex items-center justify-center mt-2">
+                  <div class="flex justify-between items-center w-full">
+                    Amount to be sent to client: ${clientRefundAmount}
+                  </div>
+                </div>
+                <div class="w-full flex items-center justify-center mt-2">
+                  <div class="flex justify-between items-center w-full">
+                    Amount to be sent to shop: ${shopRefundAmount}
+                  </div>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="px-8 md:px-16 ">
+                <div class="w-full bg-gray-100 rounded-xl mb-2 py-4 mt-8">
+
+                  <div class="px-4">
+                    <span className="inline-block mb-2 text-xs font-normal">
+                      Procedure:
+                    </span>
+                    <p className="text-sm font-normal leading-6">
+                      1 - Log in to Paystack and locate the transation with transaction ID specified above, ensure
+                    </p>
+                    <p className="text-sm font-normal leading-6">
+                      2 - Call the client and let them know that we're processing the refund.
+                    <ul>
+                      <li>If the refund type is partial, inform them again of the shop's cancellation policy and
+                        cancellation fee
+                      </li>
+                      <li>If the refund is full, let them know that we'll send them the full amount</li>
+                    </ul>
+                    In both case, inform them of the refund amount and remind them that a GHS 1 transaction fee and e-levy may apply
+                    </p>
+                    <p className="text-sm font-normal leading-6">
+                      3 - Go to the "Transfers" tab on Paystack and initiate a transfer by choosing "New transfer". 
+                      <ul>
+                        <li>If you're refunding the client, enter their name or number in the recipient field. If the recipient doesn;t already exist, choose create recipient and use the data provided above</li>
+                        <li>If you're refunding the shop, the recipient will be the shop's name. Do not create a recipient ID for a shop. If the shop's name isn't listed in the recipients, contact Osfield or Kojo.</li>
+                      </ul>
+                    </p>
+                    <p className="text-sm font-normal leading-6">
+                      4 - Fill in the amount to send, make sure it matches perfectly the client's refund amount stated above
+                    </p>
+                    <p className="text-sm font-normal leading-6">
+                      5 - Fill transfer note: "Refund for service booked on Wavier". Transfer Reference: "Client refund" + name of the client
+                    </p>
+                    <p className="text-sm font-normal leading-6">
+                      5 - Fill transfer note: "Refund for service booked on Wavier". Transfer Reference: "Client refund" + name of the client
+                    </p>
+                  </div>
+
+                </div>
+              </td>
+            </tr>
+
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td align="center">
+          <table>
+            <tr>
+              <td>
+                <div class="text-xs py-2 items-center w-full mr-8">
+                  <a href="https://twitter.com/WavierOfficial">
+                    <div class="w-12 h-12 bg-blue-400 rounded-full bg-cover "
+                      style="background-image: url('https://firebasestorage.googleapis.com/v0/b/barbapp-d4159.appspot.com/o/appImages%2Fsocial_logos%2Ftwitter.png?alt=media&token=4b1244dd-596e-4a1d-8186-1f2a86962cf0');">
+                    </div>
+                  </a>
+
+                </div>
+              </td>
+              <td>
+                <div class="text-xs py-2 items-center w-full">
+                  <a href="https://www.instagram.com/wavierofficial/">
+                    <div class="w-12 h-12 bg-blue-400 rounded-full bg-cover "
+                      style="background-image: url('https://firebasestorage.googleapis.com/v0/b/barbapp-d4159.appspot.com/o/appImages%2Fsocial_logos%2Finstagram.png?alt=media&token=152bc8fe-bb6a-4b30-a85c-2a18a760a4aa');">
+                    </div>
+                  </a>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <div class="text-xs py-1">
+            <p>This email was sent to you because you're a registered Wavier super hero.</p>
+            <p>Powered by Wavier. Copyright 2023</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </block>
+</extends>
